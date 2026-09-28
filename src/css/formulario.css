@@ -1,0 +1,81 @@
+.formulario-contenido {
+    padding: 30px;
+    border-radius: 12px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.formulario-titulo {
+    font-size: 30px;
+    font-weight: 600px;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.formulario-titulo-bold {
+    font-weight: 900;
+    color: #6d28d9;
+
+}
+
+.formulario-btn-cancelar{
+    display: block;
+    background-color: #6D28D9;
+    padding: 15px;
+    margin: 30px auto;
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-btn-cancelar:hover{
+    background-color: #5B21B6;
+}
+
+.formulario-btn-texto-cancelar{
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.formulario-campo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.formulario-label {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.formulario-input {
+    padding: 15px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    color: #333333;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.formulario-input::placeholder {
+    color: #666666;
+}
+
+.formulario-input:focus{
+    outline: 2px solid #F;
+    o
+}
