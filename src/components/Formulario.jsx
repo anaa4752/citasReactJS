@@ -5,6 +5,8 @@ import "../css/formulario.css"
 const Formulario = ( {
     modalVisible,
     setModalVisible,
+    pacientes,
+    setPacientes
 
 })=>{
     const[paciente,setPaciente]=useState('');
@@ -14,10 +16,38 @@ const Formulario = ( {
     const[fechaAlta,setFechaAlta]=useState('');
     const[sintomas,setSintomas]=useState('');
 
-    const handleCita = (e) => {
-        e.preventDefault
+    const handleCita = (e) => {     // Function to handle the form submission
+        e.preventDefault();
 
+        //validacion de formulario
+        if([paciente.trim(), nombrePropietario.trim(), correo.trim(), telefono.trim(), fechaAlta.trim(), sintomas.trim()].includes('')){
+            console.log('Todos los campos son obligatorios');
+            return;
+        }
+
+        //Create an object with all values in the form
+   
+        const nuevoPaciente = {
+            paciente,
+            nombrePropietario,
+            correo,
+            telefono,
+            fechaAlta,
+            sintomas
+        };
+
+        nuevoPaciente.id = Date.now(); // Add a unique ID to the new patient object
+        console.log(nuevoPaciente);
+
+        //Save all new recorsd(pacientes)
+        //state = add my object into the array
+        setPacientes([...pacientes, nuevoPaciente]);// Add the new patient to the existing array of patients
+        setModalVisible(false); // Close the modal after submitting the form
     }
+
+   
+
+    
 
     return (       //si queremos regresar varias cosas usamos ()
         <div className="formulario-contenido">
@@ -30,7 +60,7 @@ const Formulario = ( {
                 <span className="formulario-btn-texto-cancelar">Cancelar</span>
             </button>
 
-            <form onSubmit={()=> handleCita(e)}>
+            <form onSubmit={(e)=> handleCita(e)}>
                 <div className="formulario-campo">
                     <label
                     htmlFor="paciente"   //el label se aplica a un input
