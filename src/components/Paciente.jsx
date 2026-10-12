@@ -1,9 +1,15 @@
 const Paciente = ({
     setModalVisible,//parametro son etiquetas las cuales esperan recibir algo
     pacientes,
-    paciente
+    paciente,
+    eliminarPaciente
 }) => {
 
+    const handleEliminar = () => {
+        eliminarPaciente(paciente.id)
+    }
+
+    //handle sirve para manejar eventos se llama dentro del DOM
     const handleEditar = () => {
         setModalVisible(true);      
         console.log(pacientes);     
@@ -21,8 +27,9 @@ const Paciente = ({
                     className="paciente-btn paciente-btn-editar"
                     onClick={()=>handleEditar()}
                 >Editar</button>
-                <button className="paciente-btn paciente-btn-eliminar">
-                    Eliminar
+                <button className="paciente-btn paciente-btn-eliminar"
+                    onClick={()=>handleEliminar()}
+                > Eliminar
                 </button>
             </div>
         </article>
